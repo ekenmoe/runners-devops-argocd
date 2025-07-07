@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: del-student-repo
+  namespace: argocd-s6arsene
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  type: git
+  url: https://github.com/DEL-ORG/del-student-devops.git
+  project: s9-s8
+data:
+  username: dGlhMTIK
+  password: Z2hwX3pxdmRQNTU4Q0RnMzZKQXAydW1DSXlGMjRoakpWTDM4cnp6dwo=

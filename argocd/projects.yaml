@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: s9-s8
+  namespace: argocd-s6arsene  # Change if your Argo CD is deployed in a different namespace
+spec:
+  description: Project for S9 and S8 applications
+  sourceRepos:
+    - '*'  # Allow all Git repos, or specify like 'https://github.com/your-org/your-repo.git'
+  destinations:
+    - namespace: '*'    # Allow apps to deploy to any namespace
+      server: '*'        # Allow deployments to any cluster Argo CD knows
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
